@@ -46,7 +46,7 @@ function checkLogin() {
       currentLogin = prompt('Please, enter your login');
     }
  
-    if (currentLogin === null) {
+    if (currentLogin === null) { //if currentLogin object
       let reask = confirm('Are you sure?');
       if (reask) {
         alert('See you next time');
