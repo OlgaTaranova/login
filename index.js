@@ -19,21 +19,8 @@ if (!question) {
   } else {
     alert("You finished withought pointing the reason");
   }
-  // switch (reason) {
-  //   case '1':
-  //     alert("You finished bacause you don't have an account");
-  //     break;
-  //   case '2':
-  //     alert("You finished bacause you don't need to use your account");
-  //     break;
-  //   case '3':
-  //     alert("You finished bacause you want to leave the site");
-  //     break;
-  //   default:
-  //     alert("You finished withought pointing the reason");
-  // }
   
-}else {
+} else {
   checkLogin();
 }
 
@@ -45,8 +32,9 @@ function checkLogin() {
     } else {
       currentLogin = prompt('Please, enter your login');
     }
+    
  
-    if (currentLogin === null) { //if currentLogin object
+    if (typeof currentLogin === 'object') { 
       let reask = confirm('Are you sure?');
       if (reask) {
         alert('See you next time');
@@ -54,13 +42,11 @@ function checkLogin() {
         checkLogin();
       }
       
-    } else {
-      if (currentLogin === login) {
+    } else if (currentLogin === login) {
         alert('You log in!');
-      } else {
+    } else {
         currentLogin = '';
         checkLogin();
       }
     
     }
- }
